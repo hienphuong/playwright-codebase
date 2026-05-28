@@ -1,5 +1,6 @@
 import { test as setup } from "@playwright/test";
 import { LoginPage } from "./pages/loginPage";
+setup.setTimeout(60000);
 
 setup('Initial project and file',async ({page}) => { 
     
