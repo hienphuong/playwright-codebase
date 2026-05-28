@@ -47,10 +47,34 @@ test.describe("Dashboard Page", () => {
         await expect(dashboardPage.page).toHaveURL(/edit-comments\.php/);
     });
 
-    test('should navigate to ettings', async ({ dashboardPage }) => {
+    test('should navigate to settings', async ({ dashboardPage }) => {
         await dashboardPage.goto();
         await dashboardPage.navigateToSettings();
         await expect(dashboardPage.page).toHaveURL(/options-general\.php/);
+    });
+
+    test('should navigate to Appearance', async ({ dashboardPage }) => {
+        await dashboardPage.goto();
+        await dashboardPage.navigateToAppearance();
+        await expect(dashboardPage.page).toHaveURL(/themes\.php/);
+    });
+
+    test('should navigate to Plugins', async ({ dashboardPage }) => {
+        await dashboardPage.goto();
+        await dashboardPage.navigateToPlugins();
+        await expect(dashboardPage.page).toHaveURL(/plugins\.php/);
+    });
+
+    test('should navigate to Users', async ({ dashboardPage }) => {
+        await dashboardPage.goto();
+        await dashboardPage.navigateToUsers();
+        await expect(dashboardPage.page).toHaveURL(/users\.php/);
+    });
+
+    test('should navigate to Tools', async ({ dashboardPage }) => {
+        await dashboardPage.goto();
+        await dashboardPage.navigateToTools();
+        await expect(dashboardPage.page).toHaveURL(/tools\.php/);
     });
 
 });
