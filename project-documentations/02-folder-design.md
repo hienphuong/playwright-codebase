@@ -8,11 +8,11 @@ tests/
 │   ├── LoginPage.ts
 │   ├── DashboardPage.ts
 │   ├── PostsPage.ts
-│   ├── PagesPage.ts
+│   ├── PagesPage.ts *
 │   ├── MediaPage.ts
 │   ├── SettingsPage.ts
-│   ├── CommentsPage.ts
-│   ├── UsersPage.ts
+│   ├── CommentsPage.ts *
+│   ├── UsersPage.ts *
 │   ├── AppearancePage.ts
 │   ├── PluginsPage.ts
 │   └── ToolsPage.ts

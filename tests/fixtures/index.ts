@@ -2,14 +2,16 @@ import { test as base } from '@playwright/test';
 import { LoginPage } from '../pages/loginPage';
 import { DashboardPage } from '../pages/dashboardPage';
 import { PostsPage} from '../pages/postsPage';
-import { AddPostPage } from '../pages/addPostPage';
+import { PagesPage } from '../pages/pagesPage';
+import { EditorPage } from '../pages/EditorPage';
 export { expect } from '@playwright/test';
 
 type MyFixtures = {
     loginPage: LoginPage;
     dashboardPage: DashboardPage;
-    postsPage: PostsPage
-    addPostPage: AddPostPage
+    postsPage: PostsPage;
+    editorPage: EditorPage;
+    pagesPage: PagesPage;
 };
 
 export const test = base.extend<MyFixtures>({
@@ -25,8 +27,12 @@ export const test = base.extend<MyFixtures>({
         const postsPage = new PostsPage(page);
         await use(postsPage);
     },
-    addPostPage: async ({ page }, use) => {
-        const addPostPage = new AddPostPage(page);
-        await use(addPostPage);
+    editorPage: async ({ page }, use) => {
+        const editorPage = new EditorPage(page);
+        await use(editorPage);
+    },
+    pagesPage: async ({ page }, use) => {
+        const pagesPage = new PagesPage(page);
+        await use(pagesPage);
     },
 });

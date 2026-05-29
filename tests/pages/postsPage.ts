@@ -10,6 +10,7 @@ export class PostsPage {
     readonly searchButton: Locator;
     readonly bulkActionSelect: Locator;
     readonly applyButton: Locator;
+    readonly row: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -39,13 +40,13 @@ export class PostsPage {
         await this.searchButton.click();
     }
 
-    // selectBulkAction
-    async selectBulkAction(action: '-1' | 'edit' | 'trash') {
-        await this.bulkActionSelect.selectOption(action);
+    getRow(title: string): Locator {
+        return this.page.locator('tr').filter({ hasText: title }).first();
     }
-
-    // applyBulkAction
-    async applyBulkAction() {
-        await this.applyButton.click();
+    
+    async deletePost(title: string) {
+        const row = this.getRow(title);
+        await row.hover();
+        await row.getByRole('link', { name: 'Trash' }).click();
     }
 }

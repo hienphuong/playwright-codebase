@@ -1,6 +1,6 @@
 import { Page, Locator } from "@playwright/test";
 
-export class AddPostPage {
+export class EditorPage{
     readonly page: Page;
 
     // locators
