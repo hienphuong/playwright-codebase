@@ -52,6 +52,7 @@ export default defineConfig({
         //baseURL: 'https://pw-practice-dev.playwrightvn.com',
         baseURL: 'https://pw-practice-dev.playwrightvn.com',
         trace: 'on-first-retry',
+        video: 'on',
       },
       dependencies: ['setup'],
       teardown: 'teardown',

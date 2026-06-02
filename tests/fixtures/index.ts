@@ -5,6 +5,8 @@ import { PostsPage} from '../pages/postsPage';
 import { PagesPage } from '../pages/pagesPage';
 import { EditorPage } from '../pages/EditorPage';
 import { CommentsPage } from '../pages/commentsPage';
+import { UsersPage } from '../pages/usersPage';
+import { AddUserPage } from '../pages/addUserPage';
 export { expect } from '@playwright/test';
 
 type MyFixtures = {
@@ -14,6 +16,8 @@ type MyFixtures = {
     editorPage: EditorPage;
     pagesPage: PagesPage;
     commentsPage: CommentsPage;
+    usersPage: UsersPage;
+    addUserPage: AddUserPage;
 };
 
 export const test = base.extend<MyFixtures>({
@@ -41,4 +45,12 @@ export const test = base.extend<MyFixtures>({
         const commentsPage = new CommentsPage(page);
         await use(commentsPage);
     },
+    usersPage: async({ page }, use) => {
+        const usersPage = new UsersPage(page);
+        await use(usersPage);
+    },
+    addUserPage: async({ page}, use) => {
+        const addUserPage = new AddUserPage(page);
+        await use(addUserPage);
+    }
 });
